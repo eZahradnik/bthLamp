@@ -1,0 +1,198 @@
+<FloatLayout>:
+    size:(0.5,1)
+
+
+    Label:
+        id: lblTitle
+        text: "Lampicka"
+        size_hint: (1,0.1)
+        pos_hint: {'x':0,'y':0.93}
+
+
+    Label:
+        id: lblStatus
+        text: "Status line"
+        size_hint: (1,0.04)
+        pos_hint: {'x':0,'y':0.91}
+        color : [0,0,0,1]
+        background_color: (0.5,0.5,0.5, 1)
+        canvas.before:
+		    Color:
+			    rgba: self.background_color
+			Rectangle:
+				size: self.size
+				pos: self.pos
+
+
+    Button:
+        id:btnSearch
+        text:"skenovat"
+        size_hint:(0.8,0.07)
+        pos_hint:{'x':0.1,'y':0.83}
+
+
+
+    Button:
+        id:btnDeviceList
+        text:"Seznam zarizeni"
+        size_hint:(0.38,0.07)
+        pos_hint:{'x':0.1,'y':0.75}
+
+
+    Button:
+        id:btnConnect
+        text:"Připojit"
+        size_hint:(0.38,0.07)
+        pos_hint:{'x':0.52,'y':0.75}
+
+    Label:
+        id: lblModes
+        text: "Rezimy"
+        size_hint:(1,0.1)
+        pos_hint:{'x':0,'y':0.68}   
+        
+
+    Button:
+        id:btnOneColor
+        text:"Jedna\nbarva"
+        size_hint:(0.25,0.09)
+        pos_hint:{'x':0.1,'y':0.62}
+
+        
+    Button:
+        id:btnColorChange
+        text:"Stridani\nbarev"
+        size_hint:(0.25,0.09)
+        pos_hint:{'x':0.38,'y':0.62}
+
+    Button:
+        id:btnRainbow
+        text:"Duha"
+        size_hint:(0.25,0.09)
+        pos_hint:{'x':0.65,'y':0.62}
+
+
+    Slider:
+        id:sliderRed
+        value_track:True
+        value_track_color:[1, 0, 0, 1]
+        size_hint:(0.5,0.05)
+        pos_hint:{'x':0.1,'y':0.56}
+        min:0
+        max:255
+
+    Slider:
+        id:sliderGreen
+        value_track:True
+        value_track_color:[0, 1, 0, 1]
+        size_hint:(0.5,0.05)
+        pos_hint:{'x':0.1,'y':0.5}
+        min:0
+        max:255
+
+    Slider:
+        id:sliderBlue
+        value_track:True
+        value_track_color:[0, 0, 1, 1]
+        size_hint:(0.5,0.05)
+        pos_hint:{'x':0.1,'y':0.44}
+        min:0
+        max:255
+
+    Slider:
+        id:sliderBrightness
+        value_track:True
+        size_hint:(0.5,0.05)
+        pos_hint:{'x':0.1,'y':0.26}
+        min:0
+        max:100
+
+    Label:
+        id:sliderValue
+        size_hint:(0.2,0.15)
+        pos_hint:{'x':0.65,'y':0.45}
+        color : [0,0,0,1]
+        background_color: (0.5,0.5,0.5, 1)
+        canvas.before:
+		    Color:
+			    rgba: self.background_color
+			Rectangle:
+				size: self.size
+				pos: self.pos
+
+    Label:
+        id:lblClrInfo
+        text:"Kliknutim nastav\nbarvu"
+        size_hint:(0.4,0.04)
+        pos_hint:{'x':0.12,'y':0.37}
+
+    Button:
+        id:btnSetClr_1
+        background_normal: ''
+        text:""
+        size_hint:(0.07,0.07)
+        pos_hint:{'x':0.52,'y':0.35}
+
+    Label:
+        id:lblClr_1
+        text:"b. 1"
+        size_hint:(0.07,0.04)
+        pos_hint:{'x':0.52,'y':0.31}
+
+
+    Button:
+        id:btnSetClr_2
+        background_normal: ''
+        text:""
+        size_hint:(0.07,0.07)
+        pos_hint:{'x':0.62,'y':0.35}
+
+    Label:
+        id:lblClr_2
+        text:"b. 2"
+        size_hint:(0.07,0.04)
+        pos_hint:{'x':0.62,'y':0.31}
+
+    Button:
+        id:btnSetClr_3
+        background_normal: ''
+        text:""
+        size_hint:(0.07,0.07)
+        pos_hint:{'x':0.72,'y':0.35}
+
+    Label:
+        id:lblClr_3
+        text:"b. 3"
+        size_hint:(0.07,0.04)
+        pos_hint:{'x':0.72,'y':0.31}
+
+
+
+    Label:
+        id:brightnessValue
+        size_hint:(0.2,0.17)
+        pos_hint:{'x':0.6,'y':0.19}
+        color : [1,1,1,1]
+        text:"Jas: 100 %"
+
+    Button:
+        id:btnSend
+        text:"Potvrdit"
+        size_hint:(0.8,0.07)
+        pos_hint:{'x':0.1,'y':0.16}
+
+    Button:
+        id:btnClose
+        text:"Ukoncit aplikaci"
+        size_hint:(0.8,0.07)
+        pos_hint:{'x':0.1,'y':0.08}
+        background_color: (1,0,0, 1)
+
+    Label:
+        size_hint:(1,0.06)
+        pos_hint:{'x':0,'y':0.03}
+        italic: True
+        font_size:12
+        text:"Vytvoril- Vojtisek Moravcu"
+
+
