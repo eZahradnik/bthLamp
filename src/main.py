@@ -13,10 +13,12 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.dropdown import DropDown
 from kivy.lang import Builder
 
+from kivy.core.window import Window
+w,h = Window.size
+print(f'w: {w}, h: {h}')
+Window.size = (w, h)
 
 from jnius import autoclass,JavaException
-
-
 
 # bind bleak's python logger into kivy's logger before importing python module using logging
 from kivy.logger import Logger
@@ -28,7 +30,12 @@ logging.Logger.manager.root = Logger
 class SayHello(App):
     def __init__(self, **kwargs):
         super(SayHello, self).__init__(**kwargs)
+
+        
+
         self.root = Builder.load_file("SayHello.kv")
+
+        
         
         self.BluetoothAdapter = autoclass('android.bluetooth.BluetoothAdapter')
         self.BluetoothDevice = autoclass('android.bluetooth.BluetoothDevice')
@@ -193,6 +200,23 @@ class SayHello(App):
         self.deviceCount = 0
         if self.deviceConnected == 1:
             #odpojit
+
+            if self.socket != None:
+                try:
+                    self.socket.close()
+                except JavaException as e:
+                    pass
+
+            self.socket = None
+
+            if self.SendData != None:
+                try:
+                    self.SendData.close()
+                except JavaException as e:
+                    pass
+            
+            self.SendData = None
+
             self.deviceConnected = 0
             self.deviceToConnect = ""
             pass
