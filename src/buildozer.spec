@@ -4,10 +4,10 @@
 title = Bluetooth Lampicka
 
 # (str) Package name
-package.name = bthLamp
+package.name = bthLampicka
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.bthLamp
+package.domain = org.bthLampicka
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -47,7 +47,6 @@ requirements = python3==3.9.15,kivy==2.1.0,asyncio
 #presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
 icon.filename = appIcon.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
@@ -109,7 +108,7 @@ android.api = 31
 #android.sdk = 20
 
 # (str) Android NDK version to use
-#android.ndk = 23b
+#android.ndk = 19b
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 21
@@ -262,8 +261,8 @@ android.add_src = PythonBluetoothGattCallback.java,PythonScanCallback.java
 #android.copy_libs = 1
 
 # (list) The Android archs to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
-# In past, was `android.arch` as we weren't supporting builds for multiple archs at the same time.
-android.archs = arm64-v8a, armeabi-v7a
+# In past, was `android.arch` as we weren't supporting builds for multiple archs at the same time.  
+android.archs = arm64-v8a,armeabi-v7a
 
 # (int) overrides automatic versionCode computation (used in build.gradle)
 # this is not the same as app version and should only be edited if you know what you're doing
@@ -284,11 +283,8 @@ android.allow_backup = True
 # (bool) disables the compilation of py to pyc/pyo files when packaging
 # android.no-compile-pyo = True
 
-# (str) The format used to package the app for release mode (aab or apk or aar).
-# android.release_artifact = aab
-
-# (str) The format used to package the app for debug mode (apk or aar).
-# android.debug_artifact = apk
+# (str) The format used to package the app for release mode (aab or apk).
+android.release_artifact = aab
 
 #
 # Python for android (p4a) specific
@@ -301,7 +297,7 @@ android.allow_backup = True
 #p4a.fork = kivy
 
 # (str) python-for-android branch to use, defaults to master
-#p4a.branch = master
+p4a.branch = develop
 
 # (str) python-for-android specific commit to use, defaults to HEAD, must be within p4a.branch
 #p4a.commit = HEAD
@@ -310,7 +306,7 @@ android.allow_backup = True
 #p4a.source_dir =
 
 # (str) The directory in which python-for-android should look for your own build recipes (if any)
-#p4a.local_recipes =../../bleak/backends/p4android/recipes
+#p4a.local_recipes =
 
 # (str) Filename to the hook for p4a
 #p4a.hook =
@@ -429,4 +425,3 @@ warn_on_root = 1
 #    Then, invoke the command line with the "demo" profile:
 #
 #buildozer --profile demo android debug
-
